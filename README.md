@@ -8,11 +8,7 @@ Este programa encuentra todos los número primos de 12 digitos implementando un 
 
 1. Una vez haya clonado el repositorio y se encuentre dentro del mismo, debera instalar la imagen de docker ejecutando el siguiente comando:
 
-
-```docker pull daporto/openmpi_y_cluster:latest``` 
-    o también 
-```docker build -t daporto/openmpi_y_cluster .```
-
+```docker pull daporto/openmpi_y_cluster:latest```  o también  ```docker build -t daporto/openmpi_y_cluster .```
 
 2. Deberemos ejecutar el siguiente comando, el cual crea un contenedor `mpi_head` y el numero de contenedores de tipo `mpi_node` que deseemos (este proceso puede tardar un poco), en este caso el número de `mpi_node` puede ser 4 por ejemplo:
 
