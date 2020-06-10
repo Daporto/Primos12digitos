@@ -83,8 +83,8 @@ RUN chown -R ${USER}:${USER} ${HOME}/.openmpi
 
 ENV TRIGGER 1
 
-ADD mpi4py_benchmarks ${HOME}/mpi4py_benchmarks
-RUN chown -R ${USER}:${USER} ${HOME}/mpi4py_benchmarks
+ADD programs ${HOME}/programs
+RUN chown -R ${USER}:${USER} ${HOME}/programs
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]
