@@ -12,7 +12,7 @@ Este programa encuentra todos los número primos de 12 digitos implementando un 
 docker pull daporto/openmpi_y_cluster:latest
 ```
 
-2. Deberemos ejecutar el siguiente comando, el cual crea un contenedor `mpi_head` y el numero de contenedores de tipo `mpi_node` que deseemos, en este caso puede ser 3 por ejemplo
+2. Deberemos ejecutar el siguiente comando, el cual crea un contenedor `mpi_head` y el numero de contenedores de tipo `mpi_node` que deseemos (este proceso puede tardar un poco), en este caso puede ser 3 por ejemplo
 
 ```
 docker-compose scale mpi_head=1 mpi_node=3
