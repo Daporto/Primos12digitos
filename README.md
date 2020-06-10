@@ -18,7 +18,7 @@ docker-compose scale mpi_head=1 mpi_node=4
 3. Una vez todos los contenedores esten corriendo, deberemos ejecutar el siguiente comando para conectarnos al contenedor `mpi_head`y correr nuestro programa que en nuestro caso sera primos12d.py. cabe mencionar que en el comando se utiliza de ejemplo 5 procesos para correr el programa, pero este valor puede ser cambiado por el valor que se desee:
 
 ```
-    docker-compose exec --user mpirun --privileged mpi_head mpirun -n 5 python3 /home/mpirun/mpi4py_benchmarks/primos12d.py
+    docker-compose exec --user mpirun --privileged mpi_head mpirun -n 5 python3 /home/mpirun/programs/primos12d.py
 ```
 
 ## Distribución del trabajo en el algoritmo
