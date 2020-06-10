@@ -19,13 +19,11 @@ docker-compose scale mpi_head=1 mpi_node=4
 
 ```
     docker-compose exec --user mpirun --privileged mpi_head mpirun -n 5 python3 /home/mpirun/mpi4py_benchmarks/primos12d.py
-    ----------------------------------------- ----------- --------------------------------------------------
-    1.                                        2.          3.
 ```
 
 ## Distribución del trabajo en el algoritmo
 
-Para distribuir el trabajo entre los n procesos, Creamos varias funciones que nos calculaban en que rango de números debía hacer la búsqueda de primos cada proceso, de tal forma que la carga entre los procesos sea lo mas balanceada posible y de esta manera optimizar los tiempo de búsqueda.
+Para distribuir el trabajo entre los n procesos, Creamos varias funciones que nos calculaban en que rango de números debía hacer la búsqueda de primos cada proceso, de tal forma que la carga entre los procesos sea lo mas balanceada posible y de esta manera optimizar los tiempo de búsqueda. Es posible de que a los últimos procesos les corresponda verificar menos números ya que estos procesos están verificando los números mas grandes lo que conlleva a un mayor esfuerzo y esto se compensa con que tengan que verificar menos números.
 
 ## Credits
 
