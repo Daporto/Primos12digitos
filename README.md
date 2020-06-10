@@ -15,7 +15,7 @@ docker pull daporto/openmpi_y_cluster:latest
 2. Deberemos ejecutar el siguiente comando, el cual crea un contenedor `mpi_head` y el numero de contenedores de tipo `mpi_node` que deseemos, en este caso puede ser 3 por ejemplo
 
 ```
-$> docker-compose scale mpi_head=1 mpi_node=3
+docker-compose scale mpi_head=1 mpi_node=3
 ```
 3. Una vez todos los contenedores esten corriendo, deberemos ejecutar el siguiente comando para conectarnos al contenedor `mpi_head`y correr nuestro programa que en nuestro caso sera primos12d.py. cabe mensionar que en el comando se utiliza de ejemplo 4 procesos para correr el programa, pero este valor puede ser cambiado por el valor que se desee.
 
