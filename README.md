@@ -12,12 +12,12 @@ Este programa encuentra todos los número primos de 12 digitos implementando un 
 docker pull daporto/openmpi_y_cluster:latest
 ```
 
-2. Deberemos ejecutar el siguiente comando, el cual crea un contenedor `mpi_head` y el numero de contenedores de tipo `mpi_node` que deseemos (este proceso puede tardar un poco), en este caso puede ser 3 por ejemplo
+2. Deberemos ejecutar el siguiente comando, el cual crea un contenedor `mpi_head` y el numero de contenedores de tipo `mpi_node` que deseemos (este proceso puede tardar un poco), en este caso el número de `mpi_node` puede ser 3 por ejemplo:
 
 ```
 docker-compose scale mpi_head=1 mpi_node=3
 ```
-3. Una vez todos los contenedores esten corriendo, deberemos ejecutar el siguiente comando para conectarnos al contenedor `mpi_head`y correr nuestro programa que en nuestro caso sera primos12d.py. cabe mensionar que en el comando se utiliza de ejemplo 4 procesos para correr el programa, pero este valor puede ser cambiado por el valor que se desee.
+3. Una vez todos los contenedores esten corriendo, deberemos ejecutar el siguiente comando para conectarnos al contenedor `mpi_head`y correr nuestro programa que en nuestro caso sera primos12d.py. cabe mensionar que en el comando se utiliza de ejemplo 4 procesos para correr el programa, pero este valor puede ser cambiado por el valor que se desee:
 
 ```
     docker-compose exec --user mpirun --privileged mpi_head mpirun -n 4 python3 /home/mpirun/mpi4py_benchmarks/primos12d.py
@@ -31,4 +31,4 @@ Para distribuir el trabajo entre los n procesos, Creamos varias funciones que no
 
 ## Credits
 
-Para la implementación del cluster y los contenedores se utilizo la solución lojada en: https://github.com/oweidner/docker.openmpi.git
+Para la implementación del cluster y los contenedores se utilizo la solución alojada en: https://github.com/oweidner/docker.openmpi.git
