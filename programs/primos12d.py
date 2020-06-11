@@ -6,6 +6,21 @@ import sys
 comm = MPI.COMM_WORLD   # Defines the default communicator
 num_procs = comm.Get_size()  # Stores the number of processes in num_procs.
 rank = comm.Get_rank()  # Stores the rank (pid) of the current process
+dgtos = int(sys.argv[1:][0])
+
+
+def rango(dgts):
+    cat0="1" 
+    cat1="9"
+    if dgts == 1:
+        return 1,9
+    else:
+        for i in range(dgts-1):
+            cat0=cat0+"0"
+            cat1=cat1+"9"
+        return int(cat0),int(cat1)
+
+
 
 def vPrime(num):
     esprimo = True
@@ -62,12 +77,11 @@ def dividetrabajo(n1,n2,costo,nblq):
         lim=m[1,i]+1
     return m
 
+n1,n2=rango(dgtos)
 
 if rank==0:
-    print("Buscando primos de 12 digitos: ")
+    print("Buscando primos de "+str(dgtos)+" digitos: ")
     start_time = time.time()
-    n1=100000000000
-    n2=999999999999
     costot = costototal(n1,n2)
     m = dividetrabajo(n1,n2,costot,num_procs-1)
     # for i in range(num_procs-1):
@@ -82,12 +96,13 @@ if rank==0:
         ne=comm.recv(source=i)
         ve[i-1]=ne
         cont = cont+ne
+    print("")
     for i in range(1,num_procs):
         nv=m[1][i-1]-m[0][i-1]+1
         ne = ve[i-1]
-        print("El proceso "+str(i)+" verificó "+str(nv)+" números y encontró "+str(ne)+" primos")
+        print("El proceso "+str(i)+" verifico "+str(nv)+" numeros y encontro "+str(ne)+" primos")
     elapsed_time = time.time() - start_time
-    print("Tiempo total de ejecución por parte del root: %.10f seconds." % elapsed_time)
+    print("Tiempo total de ejecucion por parte del root: %.10f seconds." % elapsed_time)
     print("Primos totales encontrados por el root: "+str(cont))
 else:
     v = comm.recv(source=0,tag=rank)
