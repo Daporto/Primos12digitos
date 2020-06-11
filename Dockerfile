@@ -4,7 +4,6 @@
 FROM ubuntu:18.04
 # FROM phusion/baseimage
 
-MAINTAINER Ole Weidner <ole.weidner@ed.ac.uk>
 
 ENV USER mpirun
 
