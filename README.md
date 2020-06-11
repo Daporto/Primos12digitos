@@ -15,9 +15,11 @@ Este programa encuentra todos los número primos de 12 digitos implementando un 
 ```
 docker-compose scale mpi_head=1 mpi_node=4
 ```
+
 3. Una vez todos los contenedores esten corriendo, deberemos ejecutar el siguiente comando para conectarnos al contenedor `mpi_head`y correr nuestro programa que en nuestro caso sera primos12d.py. cabe mencionar que en el comando se utiliza de ejemplo **5** procesos para correr el programa, también el ultimo número del comando es un parametro que hace referencia al número de digitos que tendran los números primos a buscar que en nuestro caso es **12**, pero todos estos valores pueden ser cambiados por el valor que se desee:
 
-```docker-compose exec --user mpirun --privileged mpi_head mpirun -n 5 python3 /home/mpirun/programs/primos12d.py 12```
+```docker-compose exec --user mpirun --privileged mpi_head mpirun -n 5 python3 /home/mpirun/programs/primos12d.py 12
+```
 
 ## Distribución del trabajo en el algoritmo
 
