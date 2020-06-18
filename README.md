@@ -2,7 +2,7 @@
 
 Travis CI: [![Build Status](https://travis-ci.org/ocramz/docker.openmpi.svg?branch=master)](https://travis-ci.org/ocramz/docker.openmpi)
 
-Este programa encuentra todos los número primos de 12 digitos implementando un sistema de cluster junto con la libreria mpi, permitiendo así la ejecución de procesos en paralelo.
+Este programa encuentra todos los números primos de 12 digitos implementando un sistema de cluster junto con la libreria mpi, permitiendo así la ejecución de procesos en paralelo.
 
 ## Intrucciones para la ejecucion del programa
 
